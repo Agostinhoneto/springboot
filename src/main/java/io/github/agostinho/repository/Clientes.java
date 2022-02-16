@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.agostinho.repositorio;
+package io.github.agostinho.repository;
 
 import io.github.agostinho.domain.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
