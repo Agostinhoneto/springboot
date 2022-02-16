@@ -16,8 +16,8 @@
 
 package io.github.agostinho.repository;
 
+import io.github.agostinho.domain.entity.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface Produtos extends JpaRepository<Produtos,Integer>{
-
+public interface Produtos extends JpaRepository<Produto,Integer> {
 }

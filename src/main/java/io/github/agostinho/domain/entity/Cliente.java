@@ -8,7 +8,6 @@ import java.util.Set;
 @Entity
 @Table( name = "cliente" )
 public class Cliente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -25,7 +24,7 @@ public class Cliente {
         this.pedidos = pedidos;
     }
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente",fetch = FetchType.LAZY)
     private Set<Pedido> pedidos;
 
     public Cliente() {

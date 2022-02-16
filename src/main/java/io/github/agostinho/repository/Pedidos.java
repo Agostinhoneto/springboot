@@ -16,8 +16,13 @@
 
 package io.github.agostinho.repository;
 
+import io.github.agostinho.domain.entity.Cliente;
+import io.github.agostinho.domain.entity.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-public interface Pedidos extends JpaRepository<Pedidos, Integer> {
+
+public interface Pedidos extends JpaRepository<Pedido, Integer> {
+
+    List<Pedido> findByCliente(Cliente cliente);
 }
