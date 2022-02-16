@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.agostinho.repository;
+package io.github.agostinho.domain.repository;
 
 import io.github.agostinho.domain.entity.Cliente;
 import io.github.agostinho.domain.entity.Pedido;

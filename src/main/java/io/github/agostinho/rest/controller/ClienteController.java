@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package io.github.agostinho.repository;
+package io.github.agostinho.rest.controller;
 
-import io.github.agostinho.domain.entity.ItemPedido;
-import org.springframework.data.jpa.repository.JpaRepository;
+public class ClienteController {
 
-public interface ItemsPedido extends JpaRepository<ItemPedido, Integer> {
+
 }

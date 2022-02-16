@@ -2,8 +2,8 @@ package io.github.agostinho;
 
 import io.github.agostinho.domain.entity.Cliente;
 import io.github.agostinho.domain.entity.Pedido;
-import io.github.agostinho.repository.Clientes;
-import io.github.agostinho.repository.Pedidos;
+import io.github.agostinho.domain.repository.Clientes;
+import io.github.agostinho.domain.repository.Pedidos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,9 +12,6 @@ import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
-
-import static io.github.agostinho.repository.Pedidos.*;
 
 @SpringBootApplication
 public class VendasApplication {
