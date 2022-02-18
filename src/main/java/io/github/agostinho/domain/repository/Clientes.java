@@ -17,6 +17,7 @@
 package io.github.agostinho.domain.repository;
 
 import io.github.agostinho.domain.entity.Cliente;
+import org.hibernate.criterion.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -37,4 +38,5 @@ public interface Clientes extends JpaRepository<Cliente, Integer> {
     @Query("select c from Cliente c left join fetch c.pedidos where c.id =: id")
     Cliente findClienteFetchPedidos(@Param("id") Integer id);
 
-    }
+
+}

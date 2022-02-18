@@ -32,13 +32,10 @@ public class Cliente {
     @Column(name = "nome", length = 100)
     private String nome;
 
-    public Set<Pedido> getPedidos() {
-        return pedidos;
-    }
 
-    public void setPedidos(Set<Pedido> pedidos) {
-        this.pedidos = pedidos;
-    }
+
+    @Column (name =  "cpf",length = 11)
+    private String cpf;
 
     @JsonIgnore
     @OneToMany(mappedBy = "cliente",fetch = FetchType.LAZY)
@@ -46,6 +43,14 @@ public class Cliente {
 
     public Cliente() {
     }
+
+    public Set<Pedido> getPedidos() {
+        return pedidos;
+    }
+    public void setPedidos(Set<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
 
     public Cliente(Integer id, String nome) {
         this.id = id;
@@ -72,6 +77,13 @@ public class Cliente {
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
     @Override
     public String toString() {
         return "Cliente{" +
