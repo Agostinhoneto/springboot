@@ -15,7 +15,6 @@
  */
 
 package io.github.agostinho.rest.controller;
-import io.github.agostinho.domain.entity.Cliente;
 import io.github.agostinho.domain.entity.Produto;
 import io.github.agostinho.domain.repository.Produtos;
 import org.springframework.data.domain.Example;
@@ -23,9 +22,7 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
-
 import static org.springframework.http.HttpStatus.*;
 
 @RestController
@@ -69,7 +66,6 @@ public class ProdutoController {
     }
 
     @GetMapping("{id}")
-    @ResponseStatus(NO_CONTENT)
     public Produto getById(@PathVariable Integer id){
         return repository
                 .findById(id)
