@@ -14,27 +14,26 @@
  * limitations under the License.
  */
 
-package io.github.agostinho.domain.entity;
+package io.github.agostinho.rest.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
-@NoArgsConstructor
-@AllArgsConstructor
+import java.util.List;
+
 @Data
-@Entity
-@Table( name = "produto" )
-public class Produto {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Integer id;
-
-    @Column(name = "descricao")
-    private String descricao;
-
-    @Column(name = "preco_unitario")
-    private BigDecimal preco;
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class InformacoesPedidoDTO {
+    private Integer codigo;
+    private String cpf;
+    private String nomeCLiente;
+    private BigDecimal total;
+    private String dataPedido;
+    private String status;
+    private List<InformacaoItemPedidoDTO> items;
 }

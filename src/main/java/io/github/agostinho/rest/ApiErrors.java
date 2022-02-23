@@ -14,27 +14,18 @@
  * limitations under the License.
  */
 
-package io.github.agostinho.domain.entity;
+package io.github.agostinho.rest;
 
-import lombok.*;
+import lombok.Getter;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-@Entity
-@Table( name = "produto" )
-public class Produto {
+import java.util.Arrays;
+import java.util.List;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Integer id;
+public class ApiErrors {
+    @Getter
+    private List<String> errors;
 
-    @Column(name = "descricao")
-    private String descricao;
-
-    @Column(name = "preco_unitario")
-    private BigDecimal preco;
+    public ApiErrors (String mensagemErro){
+        this.errors = Arrays.asList(mensagemErro);
+    }
 }

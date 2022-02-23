@@ -16,6 +16,13 @@
 
 package io.github.agostinho.service;
 
-public interface PedidoService {
+import io.github.agostinho.domain.entity.Pedido;
+import io.github.agostinho.rest.dto.PedidoDTO;
 
+import java.util.Optional;
+
+public interface PedidoService {
+    Pedido salvar(PedidoDTO dto);
+
+   Optional<Pedido> obterPedidoCompleto(Integer id);
 }
