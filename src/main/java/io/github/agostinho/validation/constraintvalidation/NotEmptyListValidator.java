@@ -14,22 +14,25 @@
  * limitations under the License.
  */
 
-package io.github.agostinho.rest;
+package io.github.agostinho.validation.constraintvalidation;
 
-import lombok.Getter;
 
-import java.util.Arrays;
+import io.github.agostinho.validation.NotEmptyList;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 
-public class ApiErrors {
-    @Getter
-    private List<String> errors;
+public class NotEmptyListValidator implements ConstraintValidator <NotEmptyList, List>{
 
-    public ApiErrors(List<String> errors) {
-        this.errors = errors;
+    @Override
+    public boolean isValid(List list, ConstraintValidatorContext constraintValidatorContext) {
+
+        return list != null && !list.isEmpty();
     }
 
-    public  ApiErrors (String mensagemErro){
-        this.errors = Arrays.asList(mensagemErro);
+    @Override
+    public void initialize(NotEmptyList constraintAnnotation) {
+       //  ConstraintValidator.super.initialize(constraintAnnotation);
     }
 }

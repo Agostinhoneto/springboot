@@ -17,12 +17,13 @@
 package io.github.agostinho.service;
 
 import io.github.agostinho.domain.entity.Pedido;
+import io.github.agostinho.domain.enums.StatusPedido;
 import io.github.agostinho.rest.dto.PedidoDTO;
 
 import java.util.Optional;
 
 public interface PedidoService {
     Pedido salvar(PedidoDTO dto);
-
-   Optional<Pedido> obterPedidoCompleto(Integer id);
+    Optional<Pedido> obterPedidoCompleto(Integer id);
+    void atualizaStatus(Integer id, StatusPedido statusPedido);
 }

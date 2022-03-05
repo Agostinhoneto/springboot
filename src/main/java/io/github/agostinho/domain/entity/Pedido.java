@@ -64,4 +64,7 @@ public class Pedido {
 
     public void SetStatus(StatusPedido realizado) {
     }
+
+    public void setStatus(StatusPedido statusPedido) {
+    }
 }

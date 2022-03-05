@@ -28,6 +28,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 public class InformacaoItemPedidoDTO {
+
     private String descricaoProduto;
     private BigDecimal precoUnitario;
     private Integer quantidade;

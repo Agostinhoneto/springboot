@@ -24,6 +24,7 @@ import io.github.agostinho.domain.repository.Clientes;
 import io.github.agostinho.domain.repository.ItemsPedido;
 import io.github.agostinho.domain.repository.Pedidos;
 import io.github.agostinho.domain.repository.Produtos;
+import io.github.agostinho.exception.PedidoNaoEncontradoException;
 import io.github.agostinho.exception.RegraNegocioException;
 import io.github.agostinho.rest.dto.ItemPedidoDTO;
 import io.github.agostinho.rest.dto.PedidoDTO;
@@ -68,6 +69,17 @@ public class PedidoServiceImpl implements PedidoService {
     @Override
     public Optional<Pedido> obterPedidoCompleto(Integer id) {
         return repository.findByFetchItens(id);
+    }
+
+    @Override
+    @Transactional
+    public void atualizaStatus( Integer id, StatusPedido statusPedido ) {
+        repository
+                .findById(id)
+                .map( pedido -> {
+                    pedido.setStatus(statusPedido);
+                    return repository.save(pedido);
+                }).orElseThrow(() -> new PedidoNaoEncontradoException() );
     }
 
     private List<ItemPedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items){
